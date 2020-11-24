@@ -1,11 +1,14 @@
+package pages;
+
+import configure.Config;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class GoogleSearchPage extends BasePage{
 
-    String key = "selenium install ubuntu python";
 
-    String URL = "https://www.google.com";
+    By searchFieldOnPypiLocator = By.name("q");
+    By resultOnSearchPageLocator = By.xpath("//*[@id=\"rso\"]/div[2]/div/div[1]/a/div/cite");
 
     public Config config= new Config();
 
@@ -18,15 +21,15 @@ public class GoogleSearchPage extends BasePage{
     }
 
     public void googleSearchBarInput(){
-        sendKey(key, config.searchFieldOnPypiLocator);
+        sendKey(config.googleSearchQuery, searchFieldOnPypiLocator);
     }
 
     public void enterSearchOnGoogle(){
-        keyEnter(config.searchFieldOnPypiLocator);
+        keyEnter(searchFieldOnPypiLocator);
     }
 
     public void goToPypiOrg(){
-        click(config.resultOnSearchPageLocator);
+        click(resultOnSearchPageLocator);
     }
 
 

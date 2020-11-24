@@ -1,8 +1,12 @@
+package tests;
+
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.chrome.ChromeDriver;
+import pages.GLCareerResultPage;
+import pages.GlCareerPage;
 
 public class SearchVacancyTest {
 

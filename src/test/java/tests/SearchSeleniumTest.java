@@ -1,7 +1,11 @@
+package tests;
+
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.openqa.selenium.chrome.ChromeDriver;
+import pages.GoogleSearchPage;
+import pages.SearchPageOnPypiOrg;
 
 public class SearchSeleniumTest {
 
