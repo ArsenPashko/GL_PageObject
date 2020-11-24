@@ -1,12 +1,9 @@
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+
 
 public class GlCareerPage extends BasePage {
 
-    By searchFieldLocator = By.id("by_keyword");
-    By buttonOfSearchLocator = By.xpath("//button[@class ='btn btn-primary find-btn']");
-
-    String URL = "https://www.globallogic.com/ua/careers/";
+    Config config = new Config();
 
     public GlCareerPage(WebDriver driver) {
         super(driver);
@@ -14,16 +11,16 @@ public class GlCareerPage extends BasePage {
     }
 
     public void open(){
-        get(URL);
+        get(config.URL_GL);
     }
 
 
     public void fieldOfSearch(){
-        sendKey("QA", searchFieldLocator);
+        sendKey("QA", config.searchFieldLocator);
     }
 
     public void clickOnSearchButton(){
-        click(buttonOfSearchLocator);
+        click(config.buttonOfSearchLocator);
     }
 
 

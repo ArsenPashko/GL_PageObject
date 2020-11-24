@@ -5,24 +5,24 @@ import org.openqa.selenium.WebDriver;
 
 public class SearchPageOnPypiOrg extends BasePage {
 
-    By searchFieldLocator = By.name("q");
-    By secondResultLocator = By.xpath("//*[@id=\"content\"]/div/div/div[2]/form/div[3]/ul/li[2]/a/h3/span[1]");
     String dataForSearch = "selenium";
+
+    public Config config = new Config();
 
     public SearchPageOnPypiOrg(WebDriver driver) {
         super(driver);
     }
 
     public void pypiSearchBarInput(){
-        sendKey(dataForSearch, searchFieldLocator);
+        sendKey(dataForSearch, config.searchFieldOnPypiLocator);
     }
 
     public void enterSearch(){
-        keyEnter(searchFieldLocator);
+        keyEnter(config.searchFieldOnPypiLocator);
     }
 
     public void goToSecondResult(){
-        click(secondResultLocator);
+        click(config.secondResultLocator);
     }
 
 

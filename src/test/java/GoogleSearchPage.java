@@ -3,30 +3,30 @@ import org.openqa.selenium.WebDriver;
 
 public class GoogleSearchPage extends BasePage{
 
-    By searchFieldLocator = By.name("q");
-    By resultOnSearchPageLocator = By.xpath("//*[@id=\"rso\"]/div[2]/div/div[1]/a/div/cite");
     String key = "selenium install ubuntu python";
 
     String URL = "https://www.google.com";
+
+    public Config config= new Config();
 
     public GoogleSearchPage(WebDriver driver) {
         super(driver);
     }
 
     public void open(){
-        get(URL);
+        get(config.URL_Google);
     }
 
     public void googleSearchBarInput(){
-        sendKey(key, searchFieldLocator);
+        sendKey(key, config.searchFieldOnPypiLocator);
     }
 
     public void enterSearchOnGoogle(){
-        keyEnter(searchFieldLocator);
+        keyEnter(config.searchFieldOnPypiLocator);
     }
 
     public void goToPypiOrg(){
-        click(resultOnSearchPageLocator);
+        click(config.resultOnSearchPageLocator);
     }
 
 
