@@ -1,3 +1,4 @@
+import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.openqa.selenium.JavascriptExecutor;
@@ -20,7 +21,7 @@ public class SearchVacancyTest {
 
         driver.manage().window().maximize();
 
-        JavascriptExecutor js = (JavascriptExecutor) driver;
+        JavascriptExecutor js =  driver;
 
         js.executeScript("window.scrollBy(0,200)");
 
@@ -36,6 +37,8 @@ public class SearchVacancyTest {
         careerResultPage.getFirst();
     }
 
-
-
+    @AfterClass
+    public static void quit(){
+        driver.quit();
+    }
 }

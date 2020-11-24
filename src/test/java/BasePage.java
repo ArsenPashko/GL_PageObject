@@ -1,4 +1,5 @@
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -31,6 +32,10 @@ public class BasePage {
         WebDriverWait wait = new WebDriverWait(driver, 10);
         firstResult = wait.until(ExpectedConditions.visibilityOfElementLocated(locator)).getText();
         System.out.println(firstResult);
+    }
+
+    public void keyEnter(By locator){
+        driver.findElement(locator).sendKeys(Keys.ENTER);
     }
 
 
